@@ -167,7 +167,7 @@
       : '';
   }
 
-  function showMusicReward() {
+function showMusicReward() {
   $('reveal-title').textContent = item.albumTitle || 'Album trouvé !';
   $('reveal-artist').textContent = item.artist || '';
 
@@ -192,7 +192,6 @@
 
   const trackId = match[1];
 
-  // Création du lecteur Spotify directement dans le quiz
   const iframe = document.createElement('iframe');
 
   iframe.src =
@@ -208,6 +207,15 @@
   iframe.title = 'Lecteur Spotify';
 
   player.appendChild(iframe);
+
+  const link = document.createElement('a');
+  link.href = trackUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = 'Écouter ce titre sur Spotify';
+
+  fallback.appendChild(link);
+}
 
   // Lien de secours si le lecteur ne fonctionne pas
   const link = document.createElement('a');
