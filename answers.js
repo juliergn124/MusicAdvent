@@ -15,7 +15,7 @@ window.QUIZ = Array.from({ length: 24 }, (_, i) => ({
     "Pat Metheny Group",
     "Pat Metheny Group, Lyle Mays",
     "Pat Metheny, Lyle Mays",
-    "Pat Metheny Group, Pat Metheny, Lyle Mays"
+    "Pat Metheny, Pat Metheny Group, Lyle Mays"
   ],
 
   // QUESTION 3 : Donne un titre de l'album !
@@ -32,8 +32,8 @@ window.QUIZ = Array.from({ length: 24 }, (_, i) => ({
 
   // INFORMATIONS DE L'ALBUM
   albumTitle: "American garage",
-  artist: "Pat Metheny Group",
+  artist: "Pat Metheny, Pat Metheny Group, Lyle Mays",
 
   // LIEN SPOTIFY D'UN TITRE
-  spotifyTrack: ""
+  spotifyTrack: "https://open.spotify.com/track/6y7jqkRyKwK42B94iQvQPn?si=BVIjq4LiRm-dNI9H12ydig&utm_source=copy-link"
 }));
