@@ -168,91 +168,57 @@
   }
 
   function showMusicReward() {
-    $('reveal-title').textContent = item.albumTitle || 'Album trouvé !';
-    $('reveal-artist').textContent = item.artist || '';
+    function showMusicReward() {
+  $('reveal-title').textContent = item.albumTitle || 'Album trouvé !';
+  $('reveal-artist').textContent = item.artist || '';
 
-    musicReveal.hidden = true;
-    $('spotify-player').innerHTML = '';
-    $('spotify-fallback').hidden = true;
+  musicReveal.hidden = false;
 
-    const trackUrl = spotifyTrackUrl(item.spotifyTrack);
+  const player = $('spotify-player');
+  const fallback = $('spotify-fallback');
 
-    if (!trackUrl) {
-      $('spotify-fallback').hidden = false;
-      $('spotify-fallback').textContent =
-        "La réponse est validée ! Le lien Spotify de ce jour sera ajouté dès que tu auras choisi le titre à écouter.";
+  player.innerHTML = '';
+  fallback.innerHTML = '';
+  fallback.hidden = true;
 
-      musicReveal.hidden = false;
-      return;
-    }
+  const trackUrl = spotifyTrackUrl(item.spotifyTrack);
+  const match = trackUrl.match(/\/track\/([a-zA-Z0-9]+)/);
 
-    musicReveal.hidden = false;
-
-    const player = $('spotify-player');
-    const fallback = $('spotify-fallback');
-
+  if (!match) {
+    fallback.textContent =
+      "Le lecteur Spotify n'est pas disponible pour ce jour.";
     fallback.hidden = false;
-    fallback.innerHTML = '';
-
-    const link = document.createElement('a');
-    link.href = trackUrl;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.textContent = 'Ouvrir ce titre dans Spotify';
-
-    fallback.appendChild(link);
-
-    if (spotifyController && spotifyController.destroy) {
-      spotifyController.destroy();
-    }
-
-    player.innerHTML = '<div id="spotify-embed"></div>';
-
-    const createPlayer = (IFrameAPI) => {
-      const target = $('spotify-embed');
-
-      if (!target || musicReveal.hidden) return;
-
-      IFrameAPI.createController(
-        target,
-        {
-          width: '100%',
-          height: '152',
-          url: trackUrl
-        },
-        (controller) => {
-          spotifyController = controller;
-
-          controller.addListener('playback_update', (event) => {
-            const data = event.data || {};
-
-            if (!data.isPaused && Number(data.position) >= 60000) {
-              controller.pause();
-            }
-          });
-        }
-      );
-    };
-
-    if (window.SpotifyIframeAPI) {
-      createPlayer(window.SpotifyIframeAPI);
-    } else {
-      window.onSpotifyIframeApiReady = (IFrameAPI) => {
-        window.SpotifyIframeAPI = IFrameAPI;
-        createPlayer(IFrameAPI);
-      };
-
-      if (!spotifyApiRequested) {
-        spotifyApiRequested = true;
-
-        const script = document.createElement('script');
-        script.src = 'https://open.spotify.com/embed/iframe-api/v1';
-        script.async = true;
-
-        document.body.appendChild(script);
-      }
-    }
+    return;
   }
+
+  const trackId = match[1];
+
+  // Création du lecteur Spotify directement dans le quiz
+  const iframe = document.createElement('iframe');
+
+  iframe.src =
+    `https://open.spotify.com/embed/track/${trackId}?utm_source=generator`;
+
+  iframe.width = '100%';
+  iframe.height = '152';
+  iframe.style.border = '0';
+  iframe.allow =
+    'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+  iframe.allowFullscreen = true;
+  iframe.loading = 'lazy';
+  iframe.title = 'Lecteur Spotify';
+
+  player.appendChild(iframe);
+
+  // Lien de secours si le lecteur ne fonctionne pas
+  const link = document.createElement('a');
+  link.href = trackUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = 'Écouter ce titre sur Spotify';
+
+  fallback.appendChild(link);
+}
 
   function finishDay() {
     state.completed = true;
