@@ -7,7 +7,7 @@ window.QUIZ = Array.from({ length: 24 }, (_, i) => ({
   day: i + 1,
 
   // QUESTION 1 : Quel est cet album ?
-  answers: ["American garage"],
+  answers: ["American garage"],["Displaced childhood"],["The snow goose"],["The art of loving"],["No jacket required"],["Amandla"], ["Goodbye yellow brick road"],["Momentum"],["Internal exile"],["Eye in the sky"],
 
   // QUESTION 2 : Qui est l'artiste ?
   artistAnswers: [
@@ -17,6 +17,15 @@ window.QUIZ = Array.from({ length: 24 }, (_, i) => ({
     "Pat Metheny, Lyle Mays",
     "Pat Metheny, Pat Metheny Group, Lyle Mays"
   ],
+  ["Marillion"],
+  ["Camel"],
+  ["Olivia Dean"],
+  ["Phil Collins"],
+  ["Miles Davis"],
+  ["Elton John"],
+  ["Jamie Cullum"],
+  ["Fish"],
+  ["The alan parsons project"],
 
   // QUESTION 3 : Donne un titre de l'album !
   trackAnswers: [
