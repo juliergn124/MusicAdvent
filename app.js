@@ -49,7 +49,7 @@
       note: "Observe la pochette et retrouve le nom de l'album.",
       placeholder: "Le nom de l'album…",
       answers: item?.answers || [],
-      limit: 10
+      limit: 8
     },
     {
       key: 'artist',
@@ -57,7 +57,7 @@
       note: "Retrouve le nom de l'artiste ou du groupe.",
       placeholder: "Le nom de l'artiste…",
       answers: item?.artistAnswers || [],
-      limit: 10
+      limit: 5
     },
     {
       key: 'track',
@@ -168,7 +168,6 @@
   }
 
   function showMusicReward() {
-    function showMusicReward() {
   $('reveal-title').textContent = item.albumTitle || 'Album trouvé !';
   $('reveal-artist').textContent = item.artist || '';
 
