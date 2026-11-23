@@ -7,16 +7,16 @@ window.QUIZ = Array.from({ length: 24 }, (_, i) => ({
   day: i + 1,
 
   // QUESTION 1 : Quel est cet album ?
-  answers: [],
+  answers: ["American garage"],
 
   // QUESTION 2 : Qui est l'artiste ?
-  artistAnswers: [],
+  artistAnswers: ["Pat Metheny", "Pat Metheny Group","Pat Metheny Group, Lyle Mays","Pat Metheny, Lyle Mays","Pat Metheny Group, Pat Metheny, Lyle Mays"]
 
   // QUESTION 3 : Donne un titre de l'album !
-  trackAnswers: [],
+  trackAnswers: ["Heartland", "Airstream", "The search", "American garage", "The epic"]
 
   // QUESTION 4 : Trouve l'année !
-  yearAnswers: [],
+  yearAnswers: ["1979"],
 
   // INFORMATIONS DE L'ALBUM
   albumTitle: "",
