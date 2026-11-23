@@ -45,14 +45,4 @@ window.QUIZ = [
     ],
     yearAnswers: ["1985"],
     spotifyTrack: "https://open.spotify.com/track/6qWIU0QKCQjwSHx7adGXKs?si=1_yYeF9QSPeKuI2XbLcA4w&utm_source=copy-link"
-  },
-  {
-    day: 3,
-    albumTitle: "",
-    answers: [],
-    artist: "",
-    artistAnswers: [],
-    trackAnswers: [],
-    yearAnswers: [],
-    spotifyTrack: ""
   }
