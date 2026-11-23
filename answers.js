@@ -3,46 +3,56 @@
 // albumTitle et artist : révélés seulement après la bonne réponse.
 // spotifyTrack : lien Spotify d'UN TITRE (Partager > Copier le lien du titre), pas seulement de l'album.
 // Exemple : "https://open.spotify.com/track/IDENTIFIANT"
-window.QUIZ = Array.from({ length: 24 }, (_, i) => ({
-  day: i + 1,
-
-  // QUESTION 1 : Quel est cet album ?
-  answers: ["American garage"],["Displaced childhood"],["The snow goose"],["The art of loving"],["No jacket required"],["Amandla"], ["Goodbye yellow brick road"],["Momentum"],["Internal exile"],["Eye in the sky"],
-
-  // QUESTION 2 : Qui est l'artiste ?
-  artistAnswers: [
+window.QUIZ = [
+  {
+    day: 1,
+    albumTitle: "American Garage",
+    answers: ["American Garage"],
+    artist: "Pat Metheny, Pat Metheny Group, Lyle Mays",
+    artistAnswers: [
     "Pat Metheny",
     "Pat Metheny Group",
     "Pat Metheny Group, Lyle Mays",
     "Pat Metheny, Lyle Mays",
     "Pat Metheny, Pat Metheny Group, Lyle Mays"
   ],
-  ["Marillion"],
-  ["Camel"],
-  ["Olivia Dean"],
-  ["Phil Collins"],
-  ["Miles Davis"],
-  ["Elton John"],
-  ["Jamie Cullum"],
-  ["Fish"],
-  ["The alan parsons project"],
-
-  // QUESTION 3 : Donne un titre de l'album !
-  trackAnswers: [
+    trackAnswers: [
     "Heartland",
     "Airstream",
     "The search",
     "American garage",
     "The epic"
   ],
-
-  // QUESTION 4 : Trouve l'année !
-  yearAnswers: ["1979"],
-
-  // INFORMATIONS DE L'ALBUM
-  albumTitle: "American garage",
-  artist: "Pat Metheny, Pat Metheny Group, Lyle Mays",
-
-  // LIEN SPOTIFY D'UN TITRE
-  spotifyTrack: "https://open.spotify.com/track/6y7jqkRyKwK42B94iQvQPn?si=BVIjq4LiRm-dNI9H12ydig&utm_source=copy-link"
-}));
+    yearAnswers: ["1979"],
+    spotifyTrack: "https://open.spotify.com/track/6y7jqkRyKwK42B94iQvQPn?si=BVIjq4LiRm-dNI9H12ydig&utm_source=copy-link"
+  },
+  {
+    day: 2,
+    albumTitle: "Displaced Childhood",
+    answers: ["Displaced Childhood],
+    artist: "Marillion",
+    artistAnswers: ["Marillion],
+    trackAnswers: [
+    "Pseudo silk kimono",
+    "Kayleigh",
+    "Lavender",
+    "Heart of Lothian",
+    "Waterhole",
+    "Lords of the Backstage",
+    "Blind curve",
+    "Childhood's end?",
+    "White feather"
+    ],
+    yearAnswers: ["1985"],
+    spotifyTrack: "https://open.spotify.com/track/6qWIU0QKCQjwSHx7adGXKs?si=1_yYeF9QSPeKuI2XbLcA4w&utm_source=copy-link"
+  },
+  {
+    day: 3,
+    albumTitle: "",
+    answers: [],
+    artist: "",
+    artistAnswers: [],
+    trackAnswers: [],
+    yearAnswers: [],
+    spotifyTrack: ""
+  },
