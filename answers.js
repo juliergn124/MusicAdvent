@@ -29,9 +29,9 @@ window.QUIZ = [
   {
     day: 2,
     albumTitle: "Displaced Childhood",
-    answers: ["Displaced Childhood],
+    answers: ["Displaced Childhood"],
     artist: "Marillion",
-    artistAnswers: ["Marillion],
+    artistAnswers: ["Marillion"],
     trackAnswers: [
     "Pseudo silk kimono",
     "Kayleigh",
