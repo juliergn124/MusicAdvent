@@ -55,4 +55,4 @@ window.QUIZ = [
     trackAnswers: [],
     yearAnswers: [],
     spotifyTrack: ""
-  },
+  }
