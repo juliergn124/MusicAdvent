@@ -32,6 +32,15 @@
         <button type="submit"><span>Valider ma réponse</span><span class="button-arrow">↗</span></button>
       </form>
       <p id="feedback" class="feedback" role="status"></p>
+      <section id="music-reveal" class="music-reveal" hidden aria-live="polite">
+        <p class="music-kicker">✦ TA RÉCOMPENSE MUSICALE ✦</p>
+        <h3 id="reveal-title">Album trouvé !</h3>
+        <p id="reveal-artist" class="reveal-artist"></p>
+        <p class="music-instruction">Tu l'as mérité : écoute un extrait de ta découverte.</p>
+        <div id="spotify-player" class="spotify-player"></div>
+        <p id="spotify-fallback" class="spotify-fallback" hidden></p>
+        <p class="music-duration">Lecture limitée à 60 secondes lorsque Spotify le permet.</p>
+      </section>
       <button id="reset-day" class="secondary" type="button">↻ Recommencer ce jour</button>
       <div class="card-bottom-note"><span>PREND TON TEMPS</span><span>ÉCOUTE TES SOUVENIRS ♫</span></div>
     </section>
